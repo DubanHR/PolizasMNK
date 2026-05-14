@@ -1,7 +1,7 @@
 {
   "name": "whatsapp-Polizas",
   "version": "1.0.0",
-  "description": "Solicitud de polizas para acuerdos de pago de comparendos de transito",
+  "description": "Solicitud de polizas de choques simples y su conciliación",
   "main": "polizas.js",
   "type": "module",
   "scripts": {
