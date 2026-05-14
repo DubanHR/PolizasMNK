@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json()); 
 
 //OBTIENE LOS DATOS DE LAS VARIABLES CREADAS EN .ENV
-const { WEBHOOK_VERIFY_TOKEN, GRAPH_API_TOKEN, FLOW_ID_2, FLOW_VALIDAR_IDENTIDAD, FLOW_ID_DATOS_POLIZA_NMK, AUTHORIZATION_SERVICE, URL_SERVICE, PORT } = process.env;
+const { WEBHOOK_VERIFY_TOKEN, GRAPH_API_TOKEN, FLOW_DATOS_PAGO_MNK, FLOW_VALIDACION_IDENTIDAD_MNK, FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK, FLOW_VALIDAR_DATOS_CONCILIACION_NMK, AUTHORIZATION_SERVICE, URL_SERVICE, PORT } = process.env;
 
 app.post("/webhook", async (req, res) => {
    
@@ -120,7 +120,7 @@ app.post("/webhook", async (req, res) => {
                 console.log("El mensaje anterior es REGISTRAR_OPCION");
 
                mensajeFormulario("\u200B", "❌ Mensaje no identificado, Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -251,7 +251,7 @@ app.post("/webhook", async (req, res) => {
             if(data.statusCode === 1){
               if(data.result.idAplicacion === 4){
                 mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                                  "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                                  "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
               }else if(data.result.idAplicacion === 5){
                 //Consume servicio para almacenar el mensaje
                 const url = URL_SERVICE + ENDPOINTS_API_AUTOEXPEDIBLES_MNK.OBTENER_RESUMEN_POLIZA;
@@ -719,7 +719,7 @@ app.post("/webhook", async (req, res) => {
                 console.log("El mensaje anterior es REGISTRAR_OPCION");
 
                mensajeFormulario("\u200B", "❌ Mensaje no identificado, Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -792,7 +792,7 @@ app.post("/webhook", async (req, res) => {
     if(message.interactive.button_reply.id === "SOLICITAR_ACUERDO"){  
       
       mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
       
     }else if(message.interactive.button_reply.id === "CONSULTAR_ACUERDO"){ 
       
@@ -1118,7 +1118,7 @@ app.post("/webhook", async (req, res) => {
                 "Por favor ingresa los siguientes datos para continuar con el proceso", 
                 "Haga clic en el botón para iniciar", 
                 "INICIAR", 
-                FLOW_ID_DATOS_POLIZA_NMK);
+                FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
 
           }else if(data.statusCode === 0){
             //MENSAJE ERROR
@@ -1370,7 +1370,7 @@ app.post("/webhook", async (req, res) => {
           "Para iniciar el proceso debemos validar tu identidad",
           "Haga clic en el botón para iniciar", 
           "INICIAR", 
-          FLOW_VALIDAR_IDENTIDAD);
+          FLOW_VALIDACION_IDENTIDAD_MNK);
 
     }else if(message.interactive.button_reply.id === "REENVIAR_CODIGO"){ 
       
@@ -1680,7 +1680,7 @@ app.post("/webhook", async (req, res) => {
                 "Por favor ingresa los siguientes datos para continuar con el proceso", 
                 "Haga clic en el botón para iniciar", 
                 "INICIAR", 
-                FLOW_ID_DATOS_POLIZA_NMK);
+                FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
 
           }else if(data.statusCode === 0){
             console.error('❌ Error statusCode', data.statusCode);
@@ -1694,7 +1694,7 @@ app.post("/webhook", async (req, res) => {
                 "Por favor ingresa los siguientes datos para continuar con el proceso", 
                 "Haga clic en el botón para iniciar", 
                 "INICIAR", 
-                FLOW_ID_DATOS_POLIZA_NMK);
+                FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
               
           }else{
             //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -1705,7 +1705,7 @@ app.post("/webhook", async (req, res) => {
                 "Por favor ingresa los siguientes datos para continuar con el proceso", 
                 "Haga clic en el botón para iniciar", 
                 "INICIAR", 
-                FLOW_ID_DATOS_POLIZA_NMK);
+                FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
 
           }
       }).catch((error) => {
@@ -1719,7 +1719,7 @@ app.post("/webhook", async (req, res) => {
                 "Por favor ingresa los siguientes datos para continuar con el proceso", 
                 "Haga clic en el botón para iniciar", 
                 "INICIAR", 
-                FLOW_ID_DATOS_POLIZA_NMK);
+                FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
       });      
       
 
@@ -1927,7 +1927,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
 
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -1939,7 +1939,7 @@ app.post("/webhook", async (req, res) => {
                   
                 //MENSAJE ERROR ENVIANDO FORMULARIO D
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                   
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -1948,7 +1948,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
 
               }
           }).catch((error) => {
@@ -1960,7 +1960,7 @@ app.post("/webhook", async (req, res) => {
             
               //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
               mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", 654781884332838);
+                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
           });      
 
 
@@ -2081,7 +2081,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
 
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -2092,7 +2092,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
                   
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -2101,7 +2101,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
 
               }
           }).catch((error) => {
@@ -2112,7 +2112,7 @@ app.post("/webhook", async (req, res) => {
               mensajeTexto(mensaje,message, business_phone_number_id);
 
               mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
-                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_ID_2);
+                   "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
           });      
       } else if(respuesta.Formulario === "3"){
 
@@ -2224,7 +2224,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("VALIDACIÓN IDENTIDAD", "Para iniciar el proceso debemos validar tu identidad",
-                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDAR_IDENTIDAD);
+                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDACION_IDENTIDAD_MNK);
 
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -2235,7 +2235,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("VALIDACIÓN IDENTIDAD", "Para iniciar el proceso debemos validar tu identidad",
-                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDAR_IDENTIDAD);
+                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDACION_IDENTIDAD_MNK);
                   
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -2243,7 +2243,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("VALIDACIÓN IDENTIDAD", "Para iniciar el proceso debemos validar tu identidad",
-                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDAR_IDENTIDAD);
+                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDACION_IDENTIDAD_MNK);
 
               }
           }).catch((error) => {
@@ -2254,7 +2254,7 @@ app.post("/webhook", async (req, res) => {
               mensajeTexto(mensaje,message, business_phone_number_id);
 
               mensajeFormulario("VALIDACIÓN IDENTIDAD", "Para iniciar el proceso debemos validar tu identidad",
-                  "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDAR_IDENTIDAD);
+                  "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDACION_IDENTIDAD_MNK);
           });      
       } else if(respuesta.Formulario === "4"){
 
@@ -2329,7 +2329,7 @@ app.post("/webhook", async (req, res) => {
                   "Por favor ingresa los siguientes datos para continuar con el proceso", 
                   "Haga clic en el botón para iniciar", 
                   "INICIAR", 
-                  FLOW_ID_DATOS_POLIZA_NMK);
+                  FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
 
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -2343,7 +2343,7 @@ app.post("/webhook", async (req, res) => {
                   "Por favor ingresa los siguientes datos para continuar con el proceso", 
                   "Haga clic en el botón para iniciar", 
                   "INICIAR", 
-                  FLOW_ID_DATOS_POLIZA_NMK);
+                  FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
                   
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -2354,7 +2354,7 @@ app.post("/webhook", async (req, res) => {
                   "Por favor ingresa los siguientes datos para continuar con el proceso", 
                   "Haga clic en el botón para iniciar", 
                   "INICIAR", 
-                  FLOW_ID_DATOS_POLIZA_NMK);
+                  FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
 
               }
           }).catch((error) => {
@@ -2368,7 +2368,7 @@ app.post("/webhook", async (req, res) => {
                   "Por favor ingresa los siguientes datos para continuar con el proceso", 
                   "Haga clic en el botón para iniciar", 
                   "INICIAR", 
-                  FLOW_ID_DATOS_POLIZA_NMK);
+                  FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
           });      
 
 
@@ -2662,7 +2662,7 @@ function mensajePlantillaFlow(message, business_phone_number_id) {
             "parameters": [
               {
                 "type": "text",
-                "text": "654781884332838"
+                "text": FLOW_VALIDAR_DATOS_CONCILIACION_NMK
               }
             ]
           }
@@ -3102,7 +3102,7 @@ function consumoSeleccionOpcionMenuAutoexpedibles(respuesta){
           if(message.button?.payload === "Solicitar_Polizas"){ 
 
             mensajeFormulario("VALIDACIÓN IDENTIDAD", "Para iniciar el proceso debemos validar tu identidad",
-                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDAR_IDENTIDAD);
+                   "Haga clic en el botón para iniciar", "INICIAR", FLOW_VALIDACION_IDENTIDAD_MNK);
 
           }else if(message.button?.payload === "Mis_polizas_activas"){
               
