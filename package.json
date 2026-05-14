@@ -1,0 +1,23 @@
+{
+  "name": "whatsapp-Polizas",
+  "version": "1.0.0",
+  "description": "Solicitud de polizas para acuerdos de pago de comparendos de transito",
+  "main": "polizas.js",
+  "type": "module",
+  "scripts": {
+    "start": "node polizas.js"
+  },
+  "author": "Inteligencia Movil",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dayjs": "^1.11.19",
+    "express": "^4.18.2",
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": []
+}
