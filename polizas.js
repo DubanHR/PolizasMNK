@@ -10,15 +10,12 @@ import fetch from "node-fetch";
 
 import {TIPOS_OPCIONES_MNK, TIPOS_OPCIONES_AUTOEXPEDIBLES_MNK} from "./utils/tipos-opciones.js"
 import {ENDPOINTS_API_MNK, ENDPOINTS_API_AUTOEXPEDIBLES_MNK}from "./networking/endpoints.api.js"
-import {ExternalApi} from "./networking/external.api.js";
 import {convertImageBase64, consultarFecha, esAnuncio, esSaludo} from "./utils/utils.js"
 
 let message = null;
 let contac = null;
 let business_phone_number_id = null;
 let mensaje = null;
-let URL_SERVICE = null;
-let AUTHORIZATION_SERVICE = null;
 
 let TOKENT = null; 
 
@@ -26,14 +23,13 @@ const app = express();
 app.use(express.json()); 
 
 //OBTIENE LOS DATOS DE LAS VARIABLES CREADAS EN .ENV
-const { WEBHOOK_VERIFY_TOKEN, GRAPH_API_TOKEN, FLOW_AUTORIZACION_LEY2300, FLOW_CORREO, FLOW_VIABILIDAD, FLOW_ACUERDO, FLOW_MIS_POLIZAS,FLOW_REGISTRAR_PERSONA, FLOW_ID, FLOW_ID_2, FLOW_VALIDAR_IDENTIDAD, FLOW_ID_DATOS_POLIZA_NMK, Authorization, PORT } = process.env;
+const { WEBHOOK_VERIFY_TOKEN, GRAPH_API_TOKEN, FLOW_ID_2, FLOW_VALIDAR_IDENTIDAD, FLOW_ID_DATOS_POLIZA_NMK, AUTHORIZATION_SERVICE, URL_SERVICE, PORT } = process.env;
 
 app.post("/webhook", async (req, res) => {
    
   //URL Desarrollo
-  
-  URL_SERVICE = "http://34.42.187.146:8084/api/";
-  AUTHORIZATION_SERVICE = "Basic MmViYmZmNjBkYTFmM2JjZlhVYUxWTHcrV3lQTi9BM0pGVFRhelp4RU9POXNmUHNpYmYvTG5PZjN2WUE9OjJlYmJmZjYwZGExZjNiY2YzOElOMUcvUEtoMU9vOU5TbEJXZkxnPT0=";
+  //URL_SERVICE = "http://34.42.187.146:8084/api/";
+  //AUTHORIZATION_SERVICE = "Basic MmViYmZmNjBkYTFmM2JjZlhVYUxWTHcrV3lQTi9BM0pGVFRhelp4RU9POXNmUHNpYmYvTG5PZjN2WUE9OjJlYmJmZjYwZGExZjNiY2YzOElOMUcvUEtoMU9vOU5TbEJXZkxnPT0=";
   
   // check if the webhook request contains a message
   // details on WhatsApp text message payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
