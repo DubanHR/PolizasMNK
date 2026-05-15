@@ -10,12 +10,14 @@ import fetch from "node-fetch";
 
 import {TIPOS_OPCIONES_MNK, TIPOS_OPCIONES_AUTOEXPEDIBLES_MNK} from "./utils/tipos-opciones.js"
 import {ENDPOINTS_API_MNK, ENDPOINTS_API_AUTOEXPEDIBLES_MNK}from "./networking/endpoints.api.js"
-import {convertImageBase64, consultarFecha, esAnuncio, esSaludo} from "./utils/utils.js"
+import {convertImageBase64, consultarFecha, esSaludo} from "./utils/utils.js"
 
 let message = null;
 let contac = null;
 let business_phone_number_id = null;
 let mensaje = null;
+//let URL_SERVICE = null;
+//let AUTHORIZATION_SERVICE = null;
 
 let TOKENT = null; 
 
@@ -2056,8 +2058,11 @@ app.post("/webhook", async (req, res) => {
                     data: {
                       messaging_product: "whatsapp",
                       to: message.from,
-                      text: { body: "✅ Gracias por realizar la conciliación con nosotros, pronto recibiras por correo electronico los datos de la confirmación del pago realizado"},
+                      //text: { body: "✅ Gracias por realizar la conciliación con nosotros, pronto recibiras por correo electronico los datos de la confirmación del pago realizado"},
                       //text: { body: JSON.stringify(data.result)},
+                      text: { body: "✅ ¡Tu trámite está listo! Una vez realizado el pago recibirás un correo electrónico con la confirmación de la indemnización según la propuesta aceptada, el cual se hará efectivo a más tardar en 7 días hábiles.\n\nSi tenés alguna duda o consulta, escribinos a pagosindemnizaciones@mnkseguros.com.\n¡Estamos para servirte!"},
+                      
+                      
                     },
                   });
             
