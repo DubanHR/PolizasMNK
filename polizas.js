@@ -2060,7 +2060,7 @@ app.post("/webhook", async (req, res) => {
                       to: message.from,
                       //text: { body: "✅ Gracias por realizar la conciliación con nosotros, pronto recibiras por correo electronico los datos de la confirmación del pago realizado"},
                       //text: { body: JSON.stringify(data.result)},
-                      text: { body: "✅ ¡Tu trámite está listo! Una vez realizado el pago recibirás un correo electrónico con la confirmación de la indemnización según la propuesta aceptada, el cual se hará efectivo a más tardar en 7 días hábiles.\n\nSi tenés alguna duda o consulta, escribinos a pagosindemnizaciones@mnkseguros.com.\n¡Estamos para servirte!"},
+                      text: { body: "✅ ¡Tu trámite está listo! Una vez realizado el pago recibirás un correo electrónico con la confirmación de la indemnización según la propuesta aceptada, el cual se hará efectivo a más tardar en 7 días hábiles.\n\nSi tenés alguna duda o consulta, escribinos al correo electrónico pagosindemnizaciones@mnkseguros.com.\n¡Estamos para servirte!"},
                       
                       
                     },
