@@ -2060,9 +2060,8 @@ app.post("/webhook", async (req, res) => {
                       to: message.from,
                       //text: { body: "✅ Gracias por realizar la conciliación con nosotros, pronto recibiras por correo electronico los datos de la confirmación del pago realizado"},
                       //text: { body: JSON.stringify(data.result)},
-                      text: { body: "✅ ¡Tu trámite está listo! Una vez realizado el pago recibirás un correo electrónico con la confirmación de la indemnización según la propuesta aceptada, el cual se hará efectivo a más tardar en 7 días hábiles.\n\nSi tenés alguna duda o consulta, escribinos al correo electrónico pagosindemnizaciones@mnkseguros.com.\n¡Estamos para servirte!"},
-                      
-                      
+                      text: { body: "✅ ¡Tu trámite está listo! Una vez realizado el pago recibirás un correo electrónico con la confirmación *de la indemnización* según la propuesta aceptada, el cual *se hará efectivo a más tardar en 7 días hábiles.*\n\nSi tenés alguna duda o consulta, escribinos al correo electrónico *pagosindemnizaciones@mnkseguros.com.*\n¡Estamos para servirte!"},
+
                     },
                   });
             
@@ -3016,7 +3015,7 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
               "Para continuar con el proceso, es necesario realizar una revisión técnica de tu vehículo en uno de nuestros centros de servicio autorizados. Para ello, el *Asegurado* deberá agendar una cita dentro de un plazo máximo de 30 días calendario a partir de esta notificación en uno de los siguientes centros:\n\n"+
               "🧰 Centro de Servicio Curridabat\n📍 Curridabat, contiguo a Agencia Datsun.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Centro_de_servicio_Curridabat \n\n"+
               "🧰 Centro de Servicio Heredia\n📍 Lagunilla, 200 norte Cocorisa, Calle Inmaculada.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Centro_de_Servicio_Heredia \n\n"+
-              "🧰 Centro de Servicio Uruca\n📍 Uruca, 300 metros oeste del Hospital México, contiguo a las instalaciones de Reprete.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Horario_ValorRepa ";
+              "🧰 Centro de Servicio Uruca\n📍 Uruca, 300 metros oeste del Hospital México, contiguo a las instalaciones de Repretel.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Horario_ValorRepa ";
             mensajeTexto(mensaje);
           }
           
