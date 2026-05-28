@@ -1905,7 +1905,7 @@ app.post("/webhook", async (req, res) => {
                     data: {
                       messaging_product: "whatsapp",
                       to: message.from,
-                      text: { body: "✅ Tu datos se estan validando, por favor espera un momento para continuar con el proceso"}
+                      text: { body: "✅ ¡Gracias! Estamos revisando la información. Por favor, esperá un momento mientras realizamos la validación para continuar con el proceso."}
                     },
                   });
             
@@ -2960,7 +2960,7 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
         if(data.statusCode === 1){
           //IDENTIFICA SI PRESIONO UN BOTON 
           if(message.button?.payload === "Aceptar"){ 
-            mensaje = "✍🏼 Para continuar con el proceso, es necesario que firmes el finiquito.\nEn unos momentos recibirás un correo electrónico con un enlace para realizar la firma y así poder continuar con el proceso.";
+            mensaje = "¡Gracias por aceptar la propuesta de conciliación!\n\n✍🏼 Para continuar con el proceso, es necesario que firmés el finiquito. En los próximos minutos vas a recibir un correo electrónico con el enlace para realizar la firma correspondiente y así poder dar continuidad al trámite.";
             mensajeTexto(mensaje,message, business_phone_number_id);
 
             /*axios({
@@ -3011,11 +3011,11 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
               
           }else if(message.button?.payload === "Rechazar"){
               
-            mensaje = "❌ Lamentamos que no hayas aceptado nuestra oferta.\n\n"+
-              "Para continuar con el proceso, es necesario realizar una revisión técnica de tu vehículo en uno de nuestros centros de servicio autorizados. Para ello, el *Asegurado* deberá agendar una cita dentro de un plazo máximo de 30 días calendario a partir de esta notificación en uno de los siguientes centros:\n\n"+
-              "🧰 Centro de Servicio Curridabat\n📍 Curridabat, contiguo a Agencia Datsun.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Centro_de_servicio_Curridabat \n\n"+
-              "🧰 Centro de Servicio Heredia\n📍 Lagunilla, 200 norte Cocorisa, Calle Inmaculada.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Centro_de_Servicio_Heredia \n\n"+
-              "🧰 Centro de Servicio Uruca\n📍 Uruca, 300 metros oeste del Hospital México, contiguo a las instalaciones de Repretel.\n📲 https://www.supersaas.es/schedule/MNK_Seguros/Horario_ValorRepa ";
+            mensaje = "Entendemos tu decisión con respecto a la propuesta presentada.\n\n"+
+              "Para continuar con el proceso de indemnización, es necesario realizar una *revisión presencial de tu vehículo en uno de nuestros Centros de Servicios.* Para ello, el asegurado, es decir, la otra parte involucrada en la colisión deberá agendar una cita dentro de un plazo máximo de 30 días calendario, a partir de esta notificación, en cualquiera de las siguientes sedes:\n\n"+
+              "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+              "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+              "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia";
             mensajeTexto(mensaje);
           }
           
@@ -3062,13 +3062,7 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
 
         mensajePlantillaReintentar(message, business_phone_number_id, contac);
     });
-
 }
-
-
-
-
-
 
 function consumoSeleccionOpcionMenuAutoexpedibles(respuesta){
     //Consume servicio para almacenar el mensaje
