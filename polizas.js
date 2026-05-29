@@ -163,11 +163,9 @@ app.post("/webhook", async (req, res) => {
             console.error('❌ Error statusCode', data.statusCode);
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
-            mensajeUbicacion();
-
             //MENSAJE ENVIADO OPCION SELECCIONADA
-            //mensaje = "❌ "+data.statusMessage;
-            //mensajeTexto(mensaje, message, business_phone_number_id);
+            mensaje = "❌ "+data.statusMessage;
+            mensajeTexto(mensaje, message, business_phone_number_id);
           }else if(data.statusCode === 401){
             //MENSAJE ERROR
             console.error('❌ Error statusCode', data.statusCode);
