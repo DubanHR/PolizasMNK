@@ -373,7 +373,7 @@ app.post("/webhook", async (req, res) => {
 
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -404,7 +404,7 @@ app.post("/webhook", async (req, res) => {
                 // mark incoming message as read
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -424,7 +424,7 @@ app.post("/webhook", async (req, res) => {
 
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -455,7 +455,7 @@ app.post("/webhook", async (req, res) => {
                 // mark incoming message as read
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -472,7 +472,7 @@ app.post("/webhook", async (req, res) => {
 
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -503,7 +503,7 @@ app.post("/webhook", async (req, res) => {
                   // mark incoming message as read
                   axios({
                     method: "POST",
-                    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -524,7 +524,7 @@ app.post("/webhook", async (req, res) => {
               // mark incoming message as read
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -542,7 +542,7 @@ app.post("/webhook", async (req, res) => {
 
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -573,7 +573,7 @@ app.post("/webhook", async (req, res) => {
               // mark incoming message as read
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -589,7 +589,7 @@ app.post("/webhook", async (req, res) => {
 
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -620,7 +620,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -880,7 +880,7 @@ app.post("/webhook", async (req, res) => {
 
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -911,7 +911,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -932,7 +932,7 @@ app.post("/webhook", async (req, res) => {
 
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -963,7 +963,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -981,7 +981,7 @@ app.post("/webhook", async (req, res) => {
 
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1012,7 +1012,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1033,7 +1033,7 @@ app.post("/webhook", async (req, res) => {
 
           axios({
             method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
             headers: {
               Authorization: `Bearer ${GRAPH_API_TOKEN}`,
             },
@@ -1064,7 +1064,7 @@ app.post("/webhook", async (req, res) => {
           // mark incoming message as read
           axios({
             method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
             headers: {
               Authorization: `Bearer ${GRAPH_API_TOKEN}`,
             },
@@ -1141,7 +1141,7 @@ app.post("/webhook", async (req, res) => {
             //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1179,7 +1179,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1204,7 +1204,7 @@ app.post("/webhook", async (req, res) => {
             //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1242,7 +1242,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1264,7 +1264,7 @@ app.post("/webhook", async (req, res) => {
             //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1302,7 +1302,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1323,7 +1323,7 @@ app.post("/webhook", async (req, res) => {
           //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
           axios({
             method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
             headers: {
               Authorization: `Bearer ${GRAPH_API_TOKEN}`,
             },
@@ -1361,7 +1361,7 @@ app.post("/webhook", async (req, res) => {
           // mark incoming message as read
           axios({
             method: "POST",
-            url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+            url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
             headers: {
               Authorization: `Bearer ${GRAPH_API_TOKEN}`,
             },
@@ -1420,7 +1420,7 @@ app.post("/webhook", async (req, res) => {
             if(data.statusCode === 1){
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -1451,7 +1451,7 @@ app.post("/webhook", async (req, res) => {
                 // mark incoming message as read
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -1470,7 +1470,7 @@ app.post("/webhook", async (req, res) => {
               //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -1501,7 +1501,7 @@ app.post("/webhook", async (req, res) => {
               // mark incoming message as read
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -1522,7 +1522,7 @@ app.post("/webhook", async (req, res) => {
               //RESPUESTA MENSAJE TIPO FORMULARIO DE DATOS DE VALIDACION
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -1553,7 +1553,7 @@ app.post("/webhook", async (req, res) => {
               // mark incoming message as read
               axios({
                 method: "POST",
-                url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -1631,7 +1631,7 @@ app.post("/webhook", async (req, res) => {
           if(data.statusCode === 1){
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -1662,7 +1662,7 @@ app.post("/webhook", async (req, res) => {
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -1903,7 +1903,7 @@ app.post("/webhook", async (req, res) => {
                   //RESPUESTA MENSAJE TIPO FORMULARIO
                   axios({
                     method: "POST",
-                    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -1917,7 +1917,7 @@ app.post("/webhook", async (req, res) => {
                   // mark incoming message as read
                   axios({
                     method: "POST",
-                    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -2056,7 +2056,7 @@ app.post("/webhook", async (req, res) => {
                   //RESPUESTA MENSAJE TIPO FORMULARIO
                   axios({
                     method: "POST",
-                    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -2073,7 +2073,7 @@ app.post("/webhook", async (req, res) => {
                   // mark incoming message as read
                   axios({
                     method: "POST",
-                    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                     headers: {
                       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                     },
@@ -2185,7 +2185,7 @@ app.post("/webhook", async (req, res) => {
 
                 axios({
                   method: "POST",
-                  url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+                  url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                   headers: {
                     Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                   },
@@ -2444,7 +2444,7 @@ function mensajeFormulario(titulo, mensaje, footer, nombreBoton, id) {
     //ENVIA MENSAJE CON EL FORMULARIO
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2484,7 +2484,7 @@ function mensajeLista(titulo, descripcion, nn) {
 
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2520,7 +2520,7 @@ function mensajeLista(titulo, descripcion, nn) {
 function mensajeInteractive(texto) {
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2565,7 +2565,7 @@ function mensajeInteractive(texto) {
     // mark incoming message as read
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2587,7 +2587,7 @@ function mensajeTexto(texto) {
     // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2604,7 +2604,7 @@ function mensajeTexto(texto) {
     // mark incoming message as read
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2653,7 +2653,7 @@ function mensajePlantillaFlow(message, business_phone_number_id) {
   // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
   axios({
     method: "POST",
-    url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
     headers: {
       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       "Content-Type": "application/json",
@@ -2716,7 +2716,7 @@ function mensajePlantilla() {
     // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
         "Content-Type": "application/json",
@@ -2756,7 +2756,7 @@ function mensajePlantilla() {
     // mark incoming message as read
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2777,7 +2777,7 @@ function mensajePlantillaSaludoInicial(message, business_phone_number_id, contac
     // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
         "Content-Type": "application/json",
@@ -2859,7 +2859,7 @@ function mensajePlantillaSaludoInicial(message, business_phone_number_id, contac
     // mark incoming message as read
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2881,7 +2881,7 @@ function mensajePlantillaReintentar() {
     // send a reply message as per the docs here https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
         "Content-Type": "application/json",
@@ -2932,7 +2932,7 @@ function mensajePlantillaReintentar() {
     // mark incoming message as read
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -2993,7 +2993,7 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
 
             /*axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
                 headers: {
                   Authorization: `Bearer ${GRAPH_API_TOKEN}`,
                 },
@@ -3024,7 +3024,7 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
             // mark incoming message as read
             axios({
               method: "POST",
-              url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+              url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
               headers: {
                 Authorization: `Bearer ${GRAPH_API_TOKEN}`,
               },
@@ -3270,7 +3270,7 @@ const generarToken = async () => {
 function mensajeInteractiveLista(texto, plan) {
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
@@ -3303,7 +3303,7 @@ function mensajeInteractiveLista(texto, plan) {
   function mensajeInteractivePagar(texto) {
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
