@@ -2630,10 +2630,11 @@ function mensajeUbicacion(message, mensaje, nombreBoton) {
       url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
+        "Content-Type": "application/json",
+        "recipient_type": "individual",
       },
       data: {
         messaging_product: "whatsapp",
-        recipient_type: "individual",
         to: message.from,
         type: "interactive",
         interactive: {
