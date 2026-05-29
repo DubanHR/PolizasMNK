@@ -2627,7 +2627,7 @@ function mensajeUbicacion(message, mensaje, nombreBoton) {
     //ENVIA MENSAJE CON EL FORMULARIO
     axios({
       method: "POST",
-      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
       },
