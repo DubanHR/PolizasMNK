@@ -2639,10 +2639,10 @@ function mensajeUbicacion(message, mensaje, nombreBoton) {
         interactive: {
           "type": "location_request_message",
           "body": {
-            "text": mensaje
+            "text": "Por favor, envía la ubicación actual donde ocurrió la colisión."
           },
           "action": {
-            "name": nombreBoton
+            "name": "Enviar ubicación"
           }
         }
       },
