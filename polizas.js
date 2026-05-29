@@ -65,8 +65,6 @@ app.post("/webhook", async (req, res) => {
     if(esSaludo(message.text.body)){
       console.log('💬 Es Saludo:', true); 
 
-      mensajeUbicacion(message, "Por favor, envía la ubicación actual donde ocurrió la colisión.", "Enviar ubicación");
-
       //Consume servicio para almacenar el mensaje
       const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_MENSAJE;
       const hashFecha = consultarFecha();
@@ -156,6 +154,8 @@ app.post("/webhook", async (req, res) => {
             //MENSAJE ERROR
             console.error('❌ Error statusCode', data.statusCode);
             console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            mensajeUbicacion();
 
             //MENSAJE ENVIADO OPCION SELECCIONADA
             mensaje = "❌ "+data.statusMessage;
@@ -2623,31 +2623,31 @@ function mensajeTexto(texto) {
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO LOCALIZACION
-function mensajeUbicacion(message, mensaje, nombreBoton) {
-    //ENVIA MENSAJE CON EL FORMULARIO
-    axios({
-      method: "POST",
-      url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
-      headers: {
-        Authorization: `Bearer ${GRAPH_API_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      data: {
-        messaging_product: "whatsapp",
-        to: message.from,
-        type: "interactive",
-        recipient_type: "individual",
-        interactive: {
-          "type": "location_request_message",
-          "body": {
-            "text": "Por favor, envía la ubicación actual donde ocurrió la colisión."
-          },
-          "action": {
-            "name": "Enviar ubicación"
-          }
+function mensajeUbicacion() {
+  //ENVIA MENSAJE CON EL FORMULARIO
+  axios({
+    method: "POST",
+    url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
+    headers: {
+      Authorization: `Bearer ${GRAPH_API_TOKEN}`,
+      "Content-Type": "application/json",
+      "recipient_type": "individual"
+    },
+    data: {
+      messaging_product: "whatsapp",
+      to: message.from,
+      "type": "interactive",
+      "interactive": {
+        "type": "location_request_message",
+        "body": {
+          "text": "Por favor, envía la ubicación actual donde ocurrió la colisión."
+        },
+        "action": {
+          "name": "Enviar ubicación"
         }
-      },
-    });
+      }
+    },
+  });
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO PLANTILLA CON FLOW
