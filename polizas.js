@@ -65,6 +65,8 @@ app.post("/webhook", async (req, res) => {
     if(esSaludo(message.text.body)){
       console.log('💬 Es Saludo:', true); 
 
+      mensajeUbicacion("Por favor, envía la ubicación actual donde ocurrió la colisión.", "Enviar ubicación");
+
       //Consume servicio para almacenar el mensaje
       const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_MENSAJE;
       const hashFecha = consultarFecha();
@@ -2380,12 +2382,7 @@ app.post("/webhook", async (req, res) => {
                   "Haga clic en el botón para iniciar", 
                   "INICIAR", 
                   FLOW_DATOS_POLIZA_AUTOEXPEDIBLES_NMK);
-          });      
-
-
-
-
-
+          });     
       }
   }
 
@@ -2618,6 +2615,33 @@ function mensajeTexto(texto) {
     //message = null;
     //contac = null;
     //business_phone_number_id = null;
+}
+
+//FUNCION PARA ENVIAR MENSAJE DE TIPO LOCALIZACION
+function mensajeUbicacion(mensaje, nombreBoton) {
+    //ENVIA MENSAJE CON EL FORMULARIO
+    axios({
+      method: "POST",
+      url: `https://graph.facebook.com/v18.0/${business_phone_number_id}/messages`,
+      headers: {
+        Authorization: `Bearer ${GRAPH_API_TOKEN}`,
+      },
+      data: {
+        messaging_product: "whatsapp",
+        recipient_type: "individual",
+        to: message.from,
+        type: "interactive",
+        interactive: {
+          "type": "location_request_message",
+          "body": {
+            "text": mensaje
+          },
+          "action": {
+            "name": nombreBoton
+          }
+        }
+      },
+    });
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO PLANTILLA CON FLOW
