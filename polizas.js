@@ -65,7 +65,7 @@ app.post("/webhook", async (req, res) => {
     if(esSaludo(message.text.body)){
       console.log('💬 Es Saludo:', true); 
 
-      mensajeUbicacion("Por favor, envía la ubicación actual donde ocurrió la colisión.", "Enviar ubicación");
+      mensajeUbicacion(message, "Por favor, envía la ubicación actual donde ocurrió la colisión.", "Enviar ubicación");
 
       //Consume servicio para almacenar el mensaje
       const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_MENSAJE;
@@ -1833,6 +1833,11 @@ app.post("/webhook", async (req, res) => {
                 listaImagenes.push(imagenBase64);
                 console.log("📦 Imagenes", "Adiciono la imagen 2");
               }
+
+              if(i === 2){
+                listaImagenes.push(imagenBase64);
+                console.log("📦 Imagenes", "Adiciono la imagen 3");
+              }
              
             } catch (error) {
               console.error('❌ Error al obtener URL IMAGEN:', error.response?.data || error.message);
@@ -1873,7 +1878,7 @@ app.post("/webhook", async (req, res) => {
               'Opcion': opcion,
               'Persona': persona,
               'lstTerminosYCondiciones': habeas,
-              'EvidenciaChoque': {'Evidencia1':listaImagenes[0], 'Evidencia2':listaImagenes[1]}
+              'EvidenciaChoque': {'Evidencia1':listaImagenes[0], 'Evidencia2':listaImagenes[1], 'Evidencia3':listaImagenes[2]}
             },
             'platform': "ConciliacionMNKWhatsApp",
             'idAplicacion': 4
@@ -2618,7 +2623,7 @@ function mensajeTexto(texto) {
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO LOCALIZACION
-function mensajeUbicacion(mensaje, nombreBoton) {
+function mensajeUbicacion(message, mensaje, nombreBoton) {
     //ENVIA MENSAJE CON EL FORMULARIO
     axios({
       method: "POST",
