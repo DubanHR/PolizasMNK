@@ -2631,12 +2631,12 @@ function mensajeUbicacion(message, mensaje, nombreBoton) {
       headers: {
         Authorization: `Bearer ${GRAPH_API_TOKEN}`,
         "Content-Type": "application/json",
-        "recipient_type": "individual",
       },
       data: {
         messaging_product: "whatsapp",
         to: message.from,
         type: "interactive",
+        recipient_type: "individual",
         interactive: {
           "type": "location_request_message",
           "body": {
