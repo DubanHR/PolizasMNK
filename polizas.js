@@ -1746,7 +1746,7 @@ app.post("/webhook", async (req, res) => {
         respuesta = 1;
         consumoSeleccionOpcionMenuReclamaciones(respuesta);
       }else if(message.button?.payload === "Rechazar"){
-        respuesta = 0;
+        respuesta = 2;
         consumoSeleccionOpcionMenuReclamaciones(respuesta);
       }else if(message.button?.payload === "Solicitar_Polizas"){
         respuesta = 1;
