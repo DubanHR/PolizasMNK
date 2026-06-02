@@ -63,7 +63,7 @@ app.post("/webhook", async (req, res) => {
     console.log("💬 NUEVO TEXTO MENSAJE:", message.text.body);
 
     if(esSaludo(message.text.body)){
-      console.log('💬 Es Saludo:', true); 
+      console.log('💬 Es Saludo:', true);
 
       //Consume servicio para almacenar el mensaje
       const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_MENSAJE;
@@ -206,6 +206,8 @@ app.post("/webhook", async (req, res) => {
 
     }else if(message.text.body === "Gracias"){
       console.log('💬 Es Despedida:', true); 
+
+      mensajeUbicacion();
       
       //IDENTIFICA SI ES UNA DESPUEDIDA
       mensaje = "👋 Esperamos haber resuelto tus inquietudes";
@@ -1733,38 +1735,7 @@ app.post("/webhook", async (req, res) => {
       
 
 
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   }else if(message?.type === "button"){
       console.log("💬 PRESIONO EL BOTON:", message.button?.payload);
@@ -1796,6 +1767,85 @@ app.post("/webhook", async (req, res) => {
     
   }else if (message?.type === "location") {
       //IDENTIFICA SI ES UN MENSAJE DE TIPO LOCALIZACION
+      console.error('Envio una ubicacion'); // Manejar errores
+
+     //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
+      const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
+      const hashFecha = consultarFecha();
+
+      const opcion =  {
+        "IdOpcion": TIPOS_OPCIONES_MNK.REGISTRAR_PERSONA,
+        "Celular": contac.wa_id,
+        "Codigo": hashFecha + contac.wa_id
+      };
+
+      const ubicacion =  {
+        "latitud": String(message?.location.latitude),
+        "longitud": String(message?.location.longitude)
+      };
+
+
+      // Datos que deseas enviar
+      const data = {
+        'data':{
+          'Opcion': opcion,
+          'Ubicacion': ubicacion
+        },
+        'platform': "ConciliacionMNKWhatsApp",
+        'idAplicacion': 4
+      }; 
+      
+      
+      console.log("📦 Petición Envio de ubicación colisión:", data);
+      
+      // Haciendo la solicitud POST
+      fetch(url, {
+          method: 'POST', // Método de la solicitud
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer '+TOKENT
+          },
+          body: JSON.stringify(data) // Convertir el objeto a una cadena JSON
+      }).then(response => {
+          if (!response.ok) {
+              console.error('❌ Error registrando ubicación colisión');
+          }
+
+          return response.json(); // Convertir la respuesta a JSON
+      }).then(data => {
+          if(data.statusCode === 1){
+              let Latitud = message?.location.latitude;
+              let Longitud = message?.location.longitude;
+                  
+              //mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud;
+              //mensajeTexto(mensaje);
+
+              //mensajeFormulario("REPORTAR EVENTUALIDAD", "Por favor ingresa la informacion de la eventualidad en via que desea reportar en la ubicacion enviada anteriormente");
+          
+          }else if(data.statusCode === 0){
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
+            mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
+            mensajeTexto(mensaje);
+            
+          }else{
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
+            mensaje = "❌ Ocurrio un error registrando la ubicación, por favor intente de nuevo enviando la ubicación actual";
+            mensajeTexto(mensaje);
+          }
+      }).catch((error) => {
+          console.error('❌ Error Registrando la información del paso 1:', error); 
+          
+          mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
+          mensajeTexto(mensaje);
+      });
       
     
     
@@ -2634,6 +2684,9 @@ function mensajeUbicacion() {
     data: {
       messaging_product: "whatsapp",
       to: message.from,
+      context: {
+        message_id: message.id, // shows the message as a reply to the original user message
+      },
       "type": "interactive",
       "interactive": {
         "type": "location_request_message",
@@ -2662,8 +2715,6 @@ function mensajePlantillaFlow(message, business_phone_number_id) {
     data: {
       messaging_product: "whatsapp",
       to: message.from,
-      
-      //text: { body: texto /*+ message.text.body*/ },
       context: {
         message_id: message.id, // shows the message as a reply to the original user message
       },
