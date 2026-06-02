@@ -2678,23 +2678,23 @@ function mensajeUbicacion() {
     url: `https://graph.facebook.com/v25.0/${business_phone_number_id}/messages`,
     headers: {
       Authorization: `Bearer ${GRAPH_API_TOKEN}`,
-      "Content-Type": "application/json",
-      "recipient_type": "individual"
+      "Content-Type": "application/json"
     },
     data: {
       messaging_product: "whatsapp",
+      recipient_type: "individual",
       to: message.from,
       context: {
         message_id: message.id, // shows the message as a reply to the original user message
       },
-      "type": "interactive",
-      "interactive": {
-        "type": "location_request_message",
-        "body": {
-          "text": "Por favor, envía la ubicación actual donde ocurrió la colisión."
+      type: "interactive",
+      interactive: {
+        type: "location_request_message",
+        body: {
+          text: "Por favor, envía la ubicación actual donde ocurrió la colisión."
         },
-        "action": {
-          "name": "Enviar ubicación"
+        action: {
+          name: "send_location"
         }
       }
     },
