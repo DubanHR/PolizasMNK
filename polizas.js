@@ -1769,8 +1769,16 @@ app.post("/webhook", async (req, res) => {
       //IDENTIFICA SI ES UN MENSAJE DE TIPO LOCALIZACION
       console.error('Envio una ubicacion'); // Manejar errores
 
+      let Latitud = message?.location.latitude;
+      let Longitud = message?.location.longitude;
+      let Direccion = message?.location.address;
+      let Name = message?.location.name;
+          
+      mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
+      mensajeTexto(mensaje);
+
      //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
-      const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
+      /*const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
       const hashFecha = consultarFecha();
 
       const opcion =  {
@@ -1845,7 +1853,7 @@ app.post("/webhook", async (req, res) => {
           
           mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
           mensajeTexto(mensaje);
-      });
+      });*/
       
     
     
