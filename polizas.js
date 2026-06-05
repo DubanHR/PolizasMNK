@@ -158,6 +158,14 @@ app.post("/webhook", async (req, res) => {
             //MENSAJE ENVIADO OPCION SELECCIONADA
             mensaje = "❌ "+data.statusMessage;
             mensajeTexto(mensaje, message, business_phone_number_id);
+          }else if(data.statusCode === 2){//NOTA
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE ENVIADO OPCION SELECCIONADA
+            mensaje = "❌ "+data.statusMessage;
+            mensajeTexto(mensaje, message, business_phone_number_id);
           }else if(data.statusCode === 99){
             //MENSAJE ERROR
             console.error('❌ Error statusCode', data.statusCode);
@@ -752,6 +760,14 @@ app.post("/webhook", async (req, res) => {
             }
 
           }else if(data.statusCode === 0){
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE ENVIADO OPCION SELECCIONADA
+            mensaje = "❌ "+data.statusMessage;
+            mensajeTexto(mensaje, message, business_phone_number_id);
+          }else if(data.statusCode === 2){//NOTA
             //MENSAJE ERROR
             console.error('❌ Error statusCode', data.statusCode);
             console.error('❌ Mensaje de Error', data.statusMessage); 
@@ -2013,6 +2029,14 @@ app.post("/webhook", async (req, res) => {
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
                     "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                   
+              }else if(data.statusCode === 2){//NOTA
+                //MENSAJE ERROR
+                console.error('❌ Error statusCode', data.statusCode);
+                console.error('❌ Mensaje de Error', data.statusMessage); 
+
+                //MENSAJE ENVIADO OPCION SELECCIONADA
+                mensaje = "❌ "+data.statusMessage;
+                mensajeTexto(mensaje, message, business_phone_number_id);
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
                 //MENSAJE ENVIADO OPCION SELECCIONADA
@@ -2157,6 +2181,14 @@ app.post("/webhook", async (req, res) => {
                 mensajeFormulario("DATOS CONCILIACIÓN", "Nos alegramos que aceptarás nuestra oferta!\n\nPara terminar el proceso ingresa los siguientes datos.\n\n",
                    "Haga clic en el botón para finalizar", "FINALIZAR", FLOW_DATOS_PAGO_MNK);
 
+              }else if(data.statusCode === 2){//NOTA
+                //MENSAJE ERROR
+                console.error('❌ Error statusCode', data.statusCode);
+                console.error('❌ Mensaje de Error', data.statusMessage); 
+
+                //MENSAJE ENVIADO OPCION SELECCIONADA
+                mensaje = "❌ "+data.statusMessage;
+                mensajeTexto(mensaje, message, business_phone_number_id);
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
                 console.error('❌ Mensaje de Error', data.statusMessage); 
@@ -3106,6 +3138,14 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
             mensajeTexto(mensaje);
           }
           
+        }else if(data.statusCode === 2){//NOTA
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE ENVIADO OPCION SELECCIONADA
+            mensaje = "❌ "+data.statusMessage;
+            mensajeTexto(mensaje, message, business_phone_number_id);
         }else if(data.statusCode === 0){
           //MENSAJE ERROR
           console.error('❌ Error statusCode', data.statusCode);
