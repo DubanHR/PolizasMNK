@@ -10,6 +10,7 @@ export const ENDPOINTS_API_MNK = {
     VALIDAR_CODIGO : "WhatsApp/ValidarHashWhatsApp",
     REENVIAR_CODIGO : "WhatsApp/ReenviarHashWhatsApp",
     DATOS_PAGO : "Reclamacion/RegistrarReclamacion",
+    REGISTRAR_POSICION : "whatsapp/ValidarPosicionesReclamacion",
 }
 
 export const ENDPOINTS_API_AUTOEXPEDIBLES_MNK = {

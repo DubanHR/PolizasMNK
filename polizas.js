@@ -1783,14 +1783,14 @@ app.post("/webhook", async (req, res) => {
     
   }else if (message?.type === "location") {
       //IDENTIFICA SI ES UN MENSAJE DE TIPO LOCALIZACION
-      console.error('Envio una ubicacion'); // Manejar errores
+      console.error('Envio una ubicación'); // Manejar errores
 
-      //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
-      const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
+      //ENVIA LOS DATOS DE LA POSICION
+      const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_POSICION;
       const hashFecha = consultarFecha();
 
       const opcion =  {
-        "IdOpcion": TIPOS_OPCIONES_MNK.REGISTRAR_PERSONA,
+        "IdOpcion": TIPOS_OPCIONES_MNK.REGISTRAR_POSICION,
         "Celular": contac.wa_id,
         "Codigo": hashFecha + contac.wa_id
       };
