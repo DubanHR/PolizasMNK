@@ -1785,16 +1785,8 @@ app.post("/webhook", async (req, res) => {
       //IDENTIFICA SI ES UN MENSAJE DE TIPO LOCALIZACION
       console.error('Envio una ubicacion'); // Manejar errores
 
-      let Latitud = message?.location.latitude;
-      let Longitud = message?.location.longitude;
-      let Direccion = message?.location.address;
-      let Name = message?.location.name;
-          
-      mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
-      mensajeTexto(mensaje);
-
-     //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
-      /*const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
+      //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
+      const url = URL_SERVICE + ENDPOINTS_API_MNK.REGISTRAR_PERSONA;
       const hashFecha = consultarFecha();
 
       const opcion =  {
@@ -1808,17 +1800,15 @@ app.post("/webhook", async (req, res) => {
         "longitud": String(message?.location.longitude)
       };
 
-
       // Datos que deseas enviar
       const data = {
         'data':{
-          'Opcion': opcion,
-          'Ubicacion': ubicacion
+          'opcion': opcion,
+          'posicionesGPS': ubicacion
         },
         'platform': "ConciliacionMNKWhatsApp",
         'idAplicacion': 4
       }; 
-      
       
       console.log("📦 Petición Envio de ubicación colisión:", data);
       
@@ -1840,9 +1830,11 @@ app.post("/webhook", async (req, res) => {
           if(data.statusCode === 1){
               let Latitud = message?.location.latitude;
               let Longitud = message?.location.longitude;
+              let Direccion = message?.location.address;
+              let Name = message?.location.name;
                   
-              //mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud;
-              //mensajeTexto(mensaje);
+              mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
+              mensajeTexto(mensaje);
 
               //mensajeFormulario("REPORTAR EVENTUALIDAD", "Por favor ingresa la informacion de la eventualidad en via que desea reportar en la ubicacion enviada anteriormente");
           
@@ -1853,6 +1845,15 @@ app.post("/webhook", async (req, res) => {
 
             //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
             mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
+            mensajeTexto(mensaje);
+            
+          }else if(data.statusCode === 2){
+            //MENSAJE ERROR
+            console.error('❌ Error statusCode', data.statusCode);
+            console.error('❌ Mensaje de Error', data.statusMessage); 
+
+            //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
+            mensaje = "❌ "+data.statusMessage;
             mensajeTexto(mensaje);
             
           }else{
@@ -1869,7 +1870,7 @@ app.post("/webhook", async (req, res) => {
           
           mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
           mensajeTexto(mensaje);
-      });*/
+      });
       
     
     
