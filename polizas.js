@@ -129,7 +129,7 @@ app.post("/webhook", async (req, res) => {
                 console.log("El mensaje anterior es REGISTRAR_OPCION");
 
                mensajeFormulario("\u200B", "❌ Mensaje no identificado, Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                    "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -738,7 +738,7 @@ app.post("/webhook", async (req, res) => {
                 console.log("El mensaje anterior es REGISTRAR_OPCION");
 
                mensajeFormulario("\u200B", "❌ Mensaje no identificado, Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                    "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -2016,7 +2016,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                  "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
 
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -2028,7 +2028,7 @@ app.post("/webhook", async (req, res) => {
                   
                 //MENSAJE ERROR ENVIANDO FORMULARIO D
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                    "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                   
               }else if(data.statusCode === 2){//NOTA
                 //MENSAJE ERROR
@@ -2045,7 +2045,7 @@ app.post("/webhook", async (req, res) => {
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
                 mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                    "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                    "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
 
               }
           }).catch((error) => {
@@ -2057,7 +2057,7 @@ app.post("/webhook", async (req, res) => {
             
               //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
               mensajeFormulario("\u200B", "❌ No pudimos realizar el proceso. Por favor asegúrate de llenar la información del formulario.", 
-                  "Por favor haga clic en el botón para reeintentar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+                  "Da clic en el botón “Reintentar” para continuar", "Reeintentar", FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
           });      
 
 
