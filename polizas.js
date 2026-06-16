@@ -2176,11 +2176,11 @@ app.post("/webhook", async (req, res) => {
                 generarToken();
 
                 //MENSAJE ENVIADO OPCION SELECCIONADA
-                mensaje = "❌ Error registrando datos de pago";
-                mensajeTexto(mensaje,message, business_phone_number_id);
+                //mensaje = "❌ Error registrando datos de pago";
+                //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "✅ *¡Nos alegra que hayás aceptado nuestra oferta!*\n\nPara finalizar el proceso, por favor, ingresá los datos necesarios para realizar el pago correspondiente.\n\n",
-                                  "Da clic en el botón “Datos para pago” para continuar.", "Datos para pago", FLOW_DATOS_PAGO_MNK);
+                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
+                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
 
               }else if(data.statusCode === 2){//NOTA
                 //MENSAJE ERROR
@@ -2195,31 +2195,32 @@ app.post("/webhook", async (req, res) => {
                 console.error('❌ Mensaje de Error', data.statusMessage); 
 
                 //MENSAJE ENVIADO OPCION SELECCIONADA
-                mensaje = "❌ Error registrando datos de pago";
-                mensajeTexto(mensaje,message, business_phone_number_id);
+                //mensaje = "❌ Error registrando datos de pago";
+                //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "✅ *¡Nos alegra que hayás aceptado nuestra oferta!*\n\nPara finalizar el proceso, por favor, ingresá los datos necesarios para realizar el pago correspondiente.\n\n",
-                                  "Da clic en el botón “Datos para pago” para continuar.", "Datos para pago", FLOW_DATOS_PAGO_MNK);
+                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
+                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+
                   
               }else{
-                //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
                 //MENSAJE ENVIADO OPCION SELECCIONADA
-                mensaje = "❌ Error registrando datos de pago";
-                mensajeTexto(mensaje,message, business_phone_number_id);
+                //mensaje = "❌ Error registrando datos de pago";
+                //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "✅ *¡Nos alegra que hayás aceptado nuestra oferta!*\n\nPara finalizar el proceso, por favor, ingresá los datos necesarios para realizar el pago correspondiente.\n\n",
-                                  "Da clic en el botón “Datos para pago” para continuar.", "Datos para pago", FLOW_DATOS_PAGO_MNK);
+                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
+                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+
 
               }
           }).catch((error) => {
               console.error('❌ Error registrando el formulario:', error); // Manejar errores
             
               //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
-              mensaje = "❌ Error registrando datos de pago";
-              mensajeTexto(mensaje,message, business_phone_number_id);
+              //mensaje = "❌ Error registrando datos de pago";
+              //mensajeTexto(mensaje,message, business_phone_number_id);
 
-              mensajeFormulario("\u200B", "✅ *¡Nos alegra que hayás aceptado nuestra oferta!*\n\nPara finalizar el proceso, por favor, ingresá los datos necesarios para realizar el pago correspondiente.\n\n",
-                                  "Da clic en el botón “Datos para pago” para continuar.", "Datos para pago", FLOW_DATOS_PAGO_MNK);
+              mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
+                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
           });      
       } else if(respuesta.Formulario === "3"){
 
