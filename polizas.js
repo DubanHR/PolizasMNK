@@ -1806,7 +1806,7 @@ app.post("/webhook", async (req, res) => {
       }else if(message.button?.payload === "Preguntas_frecuentes"){
         respuesta = 3;
         consumoSeleccionOpcionMenuAutoexpedibles(respuesta);
-      }else if(message.interactive.button_reply.id === "Continuar"){
+      }else if(message.button?.payload === "Continuar"){
         mensajeUbicacion("Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización.");
       }
     
