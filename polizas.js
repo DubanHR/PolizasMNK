@@ -1639,9 +1639,6 @@ app.post("/webhook", async (req, res) => {
             mensajeTexto(mensaje,message, business_phone_number_id);
         });
 
-    }else if(message.interactive.button_reply.id === "Continuar"){
-        mensaje = "Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización."
-        mensajeUbicacion(mensaje);
     }else{
 
       //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
