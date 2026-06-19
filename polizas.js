@@ -232,9 +232,6 @@ app.post("/webhook", async (req, res) => {
 
     }else if(message.text.body === "Gracias"){
       console.log('💬 Es Despedida:', true); 
-
-      mensaje = "Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización."
-      mensajeUbicacion(mensaje);
       
       //IDENTIFICA SI ES UNA DESPUEDIDA
       mensaje = "👋 Esperamos haber resuelto tus inquietudes";
@@ -872,9 +869,8 @@ app.post("/webhook", async (req, res) => {
       mensajeTexto(mensaje);
       
     }else if(message.interactive.button_reply.id === "PAGAR"){ 
-      
-      
-      
+
+
       const url = URL_SERVICE + ENDPOINTS_API_AUTOEXPEDIBLES_MNK.CREAR_POLIZA; 
       const hashFecha = consultarFecha();
 
@@ -1643,6 +1639,9 @@ app.post("/webhook", async (req, res) => {
             mensajeTexto(mensaje,message, business_phone_number_id);
         });
 
+    }else if(message.interactive.button_reply.id === "Continuar"){
+        mensaje = "Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización."
+        mensajeUbicacion(mensaje);
     }else{
 
       //ENVIA LOS DATOS DEL FORMULARIO DE ACUERDO DE PAGO
@@ -1810,6 +1809,9 @@ app.post("/webhook", async (req, res) => {
       }else if(message.button?.payload === "Preguntas_frecuentes"){
         respuesta = 3;
         consumoSeleccionOpcionMenuAutoexpedibles(respuesta);
+      }else if(message.interactive.button_reply.id === "Continuar"){
+        mensaje = "Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización."
+        mensajeUbicacion(mensaje);
       }
     
   }else if(message?.type === "interactive" && message?.interactive.type === "list_reply"){
