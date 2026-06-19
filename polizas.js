@@ -2773,7 +2773,7 @@ function mensajeTexto(texto) {
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO LOCALIZACION
-function mensajeUbicacion(message) {
+function mensajeUbicacion(mensajeUbicacion) {
   //ENVIA MENSAJE CON EL FORMULARIO
   axios({
     method: "POST",
@@ -2793,7 +2793,7 @@ function mensajeUbicacion(message) {
       interactive: {
         type: "location_request_message",
         body: {
-          text: message
+          text: mensajeUbicacion
         },
         action: {
           name: "send_location"
