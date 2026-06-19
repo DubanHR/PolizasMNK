@@ -112,7 +112,12 @@ app.post("/webhook", async (req, res) => {
                 mensaje = "❌ Mensaje no identificado, por favor intente de nuevo";
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajePlantillaFlow(message, business_phone_number_id);
+                //mensajePlantillaFlow(message, business_phone_number_id); adsfa
+                mensajeFormulario("\u200B", 
+                  "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
+                  "Por favor, da clic en el botón “Formulario", 
+                  "Formulario", 
+                  FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_PERSONA:
@@ -122,7 +127,12 @@ app.post("/webhook", async (req, res) => {
                 mensaje = "❌ Mensaje no identificado, por favor intente de nuevo";
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajePlantillaFlow(message, business_phone_number_id);
+                //mensajePlantillaFlow(message, business_phone_number_id); adsfa
+                mensajeFormulario("\u200B", 
+                  "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
+                  "Por favor, da clic en el botón “Formulario", 
+                  "Formulario", 
+                  FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -164,7 +174,15 @@ app.post("/webhook", async (req, res) => {
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
             //MENSAJE ENVIADO OPCION SELECCIONADA
-            mensaje = "❌ "+data.statusMessage;
+            mensaje = "❌ ¡Hola!/n/n"+
+                "Te informamos que se ha superado el tiempo establecido para dar respuesta al último mensaje y poder completar el registro y atención por este medio.\n\n"+
+                "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación.\n\n"+
+                "La cita deberá ser coordinada por el nuestro asegurado, en cualquiera de nuestros Centros de Servicios:\n\n"+
+                "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                "¡Estamos para servirte!";
+
             mensajeTexto(mensaje, message, business_phone_number_id);
           }else if(data.statusCode === 99){
             //MENSAJE ERROR
@@ -215,7 +233,8 @@ app.post("/webhook", async (req, res) => {
     }else if(message.text.body === "Gracias"){
       console.log('💬 Es Despedida:', true); 
 
-      mensajeUbicacion();
+      mensaje = "Requerimos tu ubicación actual, por lo que te pedimos que hagás clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización."
+      mensajeUbicacion(mensaje);
       
       //IDENTIFICA SI ES UNA DESPUEDIDA
       mensaje = "👋 Esperamos haber resuelto tus inquietudes";
@@ -721,7 +740,12 @@ app.post("/webhook", async (req, res) => {
                 mensaje = "❌ Mensaje no identificado, por favor intente de nuevo";
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajePlantillaFlow(message, business_phone_number_id);
+                //mensajePlantillaFlow(message, business_phone_number_id); adsfa
+                mensajeFormulario("\u200B", 
+                  "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
+                  "Por favor, da clic en el botón “Formulario", 
+                  "Formulario", 
+                  FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_PERSONA:
@@ -731,7 +755,12 @@ app.post("/webhook", async (req, res) => {
                 mensaje = "❌ Mensaje no identificado, por favor intente de nuevo";
                 mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajePlantillaFlow(message, business_phone_number_id);
+                //mensajePlantillaFlow(message, business_phone_number_id); adsfa
+                mensajeFormulario("\u200B", 
+                  "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
+                  "Por favor, da clic en el botón “Formulario", 
+                  "Formulario", 
+                  FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
                 break;
 
               case TIPOS_OPCIONES_MNK.REGISTRAR_OPCION:
@@ -773,7 +802,14 @@ app.post("/webhook", async (req, res) => {
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
             //MENSAJE ENVIADO OPCION SELECCIONADA
-            mensaje = "❌ "+data.statusMessage;
+            mensaje = "❌ ¡Hola!/n/n"+
+                "Te informamos que se ha superado el tiempo establecido para dar respuesta al último mensaje y poder completar el registro y atención por este medio.\n\n"+
+                "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación.\n\n"+
+                "La cita deberá ser coordinada por el nuestro asegurado, en cualquiera de nuestros Centros de Servicios:\n\n"+
+                "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                "¡Estamos para servirte!";
             mensajeTexto(mensaje, message, business_phone_number_id);
           }else if(data.statusCode === 99){
             //MENSAJE ERROR
@@ -1836,16 +1872,20 @@ app.post("/webhook", async (req, res) => {
               mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
               mensajeTexto(mensaje);
 
-              //mensajeFormulario("REPORTAR EVENTUALIDAD", "Por favor ingresa la informacion de la eventualidad en via que desea reportar en la ubicacion enviada anteriormente");
-          
+              mensajeFormulario("\u200B", 
+                "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
+                "Por favor, da clic en el botón “Formulario", 
+                "Formulario", 
+                FLOW_VALIDAR_DATOS_CONCILIACION_NMK);
+
           }else if(data.statusCode === 0){
             //MENSAJE ERROR
             console.error('❌ Error statusCode', data.statusCode);
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
-            //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
-            mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
-            mensajeTexto(mensaje);
+            //MENSAJE SI OCURRIO UN ERROR ENVIADO UBICACION
+            mensaje = "❌ Ocurrio un error registrando tu ubicación actual, por favor intente de nuevo haciendo clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización.";
+            mensajeUbicacion(mensaje);
             
           }else if(data.statusCode === 2){
             //MENSAJE ERROR
@@ -1853,7 +1893,12 @@ app.post("/webhook", async (req, res) => {
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
             //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
-            mensaje = "❌ "+data.statusMessage;
+            mensaje = "❌ Tu ubicación actual presenta diferencias respecto a la información registrada en el reporte de colisión dentro de la aplicación.\n\n"+
+                      "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación. Para avanzar con el trámite, nuestro asegurado deberá coordinar la cita en cualquiera de nuestros Centros de Servicios, según tu conveniencia:\n\n"+
+                      "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                      "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                      "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                      "¡Estamos para servirte!";
             mensajeTexto(mensaje);
             
           }else{
@@ -1861,15 +1906,16 @@ app.post("/webhook", async (req, res) => {
             console.error('❌ Error statusCode', data.statusCode);
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
-            //MENSAJE SI OCURRIO UN ERROR AL REGISTRAR EL PASO 1
-            mensaje = "❌ Ocurrio un error registrando la ubicación, por favor intente de nuevo enviando la ubicación actual";
-            mensajeTexto(mensaje);
+            //MENSAJE SI OCURRIO UN ERROR ENVIADO UBICACION
+            mensaje = "❌ Ocurrio un error registrando tu ubicación actual, por favor intente de nuevo haciendo clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización.";
+            mensajeUbicacion(mensaje);
           }
       }).catch((error) => {
-          console.error('❌ Error Registrando la información del paso 1:', error); 
+          console.error('❌ Error Registrando la ubicacción:', error); 
           
-          mensaje = "❌ Ocurrio un error registrando la ubicación de la colisión, por favor intente de nuevo enviando la ubicación actual";
-          mensajeTexto(mensaje);
+          //MENSAJE SI OCURRIO UN ERROR ENVIADO UBICACION
+          mensaje = "❌ Ocurrio un error registrando tu ubicación actual, por favor intente de nuevo haciendo clic en el botón *“Enviar ubicación”* para registrarla mediante geolocalización.";
+          mensajeUbicacion(mensaje);
       });
       
     
@@ -2036,7 +2082,14 @@ app.post("/webhook", async (req, res) => {
                 console.error('❌ Mensaje de Error', data.statusMessage); 
 
                 //MENSAJE ENVIADO OPCION SELECCIONADA
-                mensaje = "❌ "+data.statusMessage;
+                 mensaje = "❌ ¡Hola!/n/n"+
+                    "Te informamos que se ha superado el tiempo establecido para dar respuesta al último mensaje y poder completar el registro y atención por este medio.\n\n"+
+                    "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación.\n\n"+
+                    "La cita deberá ser coordinada por el nuestro asegurado, en cualquiera de nuestros Centros de Servicios:\n\n"+
+                    "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                    "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                    "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                    "¡Estamos para servirte!";
                 mensajeTexto(mensaje, message, business_phone_number_id);
               }else{
                 //MENSAJE ERROR ENVIANDO FORMULARIO DE DATOS DE VIABILIDAD
@@ -2188,7 +2241,14 @@ app.post("/webhook", async (req, res) => {
                 console.error('❌ Mensaje de Error', data.statusMessage); 
 
                 //MENSAJE ENVIADO OPCION SELECCIONADA
-                mensaje = "❌ "+data.statusMessage;
+                 mensaje = "❌ ¡Hola!/n/n"+
+                    "Te informamos que se ha superado el tiempo establecido para dar respuesta al último mensaje y poder completar el registro y atención por este medio.\n\n"+
+                    "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación.\n\n"+
+                    "La cita deberá ser coordinada por el nuestro asegurado, en cualquiera de nuestros Centros de Servicios:\n\n"+
+                    "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                    "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                    "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                    "¡Estamos para servirte!";
                 mensajeTexto(mensaje, message, business_phone_number_id);
               }else if(data.statusCode === 0){
                 console.error('❌ Error statusCode', data.statusCode);
@@ -2713,7 +2773,7 @@ function mensajeTexto(texto) {
 }
 
 //FUNCION PARA ENVIAR MENSAJE DE TIPO LOCALIZACION
-function mensajeUbicacion() {
+function mensajeUbicacion(message) {
   //ENVIA MENSAJE CON EL FORMULARIO
   axios({
     method: "POST",
@@ -2733,7 +2793,7 @@ function mensajeUbicacion() {
       interactive: {
         type: "location_request_message",
         body: {
-          text: "Por favor, envía la ubicación actual donde ocurrió la colisión."
+          text: message
         },
         action: {
           name: "send_location"
@@ -3146,7 +3206,14 @@ function consumoSeleccionOpcionMenuReclamaciones(respuesta){
             console.error('❌ Mensaje de Error', data.statusMessage); 
 
             //MENSAJE ENVIADO OPCION SELECCIONADA
-            mensaje = "❌ "+data.statusMessage;
+            mensaje = "❌ ¡Hola!/n/n"+
+                "Te informamos que se ha superado el tiempo establecido para dar respuesta al último mensaje y poder completar el registro y atención por este medio.\n\n"+
+                "Con el fin de dar continuidad al proceso de indemnización, es necesario realizar una valoración presencial de tu vehículo, la cual deberá efectuarse dentro de un plazo máximo de 7 días calendario contados a partir de la recepción de esta notificación.\n\n"+
+                "La cita deberá ser coordinada por el nuestro asegurado, en cualquiera de nuestros Centros de Servicios:\n\n"+
+                "🔧 *Centro de Servicios – Uruca*\n📍 300 metros oeste del Hospital México, contiguo a Repretel, Uruca.\n🔗 Citas: https://bit.ly/CSUruca \n\n"+
+                "🔧 *Centro de Servicios – Curridabat*\n📍 Contiguo a la agencia Datsun, Curridabat.\n🔗 https://bit.ly/CSCurridabat \n\n"+
+                "🔧 *Centro de Servicios – Heredia*\n📍 200 norte de Cocorisa, Calle Inmaculada, Lagunilla, Heredia.\n🔗 https://bit.ly/CSHeredia \n\n"+
+                "¡Estamos para servirte!";
             mensajeTexto(mensaje, message, business_phone_number_id);
         }else if(data.statusCode === 0){
           //MENSAJE ERROR
