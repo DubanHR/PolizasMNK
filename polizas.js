@@ -1862,13 +1862,13 @@ app.post("/webhook", async (req, res) => {
           return response.json(); // Convertir la respuesta a JSON
       }).then(data => {
           if(data.statusCode === 1){
-              let Latitud = message?.location.latitude;
-              let Longitud = message?.location.longitude;
-              let Direccion = message?.location.address;
-              let Name = message?.location.name;
+              //let Latitud = message?.location.latitude;
+              //let Longitud = message?.location.longitude;
+              //let Direccion = message?.location.address;
+              //let Name = message?.location.name;
                   
-              mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
-              mensajeTexto(mensaje);
+              //mensaje = "La ubicacion es: \nLatitud: "+Latitud+"\nLongitud: "+Longitud+"\nDirección: "+Direccion+"\nNombre: "+Name;
+              //mensajeTexto(mensaje);
 
               mensajeFormulario("\u200B", 
                 "✅ Tu ubicación se ha registrado correctamente. A continuación completá toda la información que te solicitamos", 
