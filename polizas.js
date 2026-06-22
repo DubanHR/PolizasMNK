@@ -2230,8 +2230,8 @@ app.post("/webhook", async (req, res) => {
                 //mensaje = "❌ Error registrando datos de pago";
                 //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
-                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+               mensajeFormulario("\u200B", "❗️Hemos detectado un error en la información ingresada en datos para pago, por favor, revisá y corrige los datos",
+                  "Da clic en el botón “DATOS PARA PAGO”  para reintetar", "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
 
               }else if(data.statusCode === 2){//NOTA
                 //MENSAJE ERROR
@@ -2256,8 +2256,8 @@ app.post("/webhook", async (req, res) => {
                 //mensaje = "❌ Error registrando datos de pago";
                 //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
-                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+                mensajeFormulario("\u200B", "❗️Hemos detectado un error en la información ingresada en datos para pago, por favor, revisá y corrige los datos",
+                  "Da clic en el botón “DATOS PARA PAGO”  para reintetar", "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
 
                   
               }else{
@@ -2265,8 +2265,8 @@ app.post("/webhook", async (req, res) => {
                 //mensaje = "❌ Error registrando datos de pago";
                 //mensajeTexto(mensaje,message, business_phone_number_id);
 
-                mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
-                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+               mensajeFormulario("\u200B", "❗️Hemos detectado un error en la información ingresada en datos para pago, por favor, revisá y corrige los datos",
+                  "Da clic en el botón “DATOS PARA PAGO”  para reintetar", "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
 
 
               }
@@ -2277,8 +2277,8 @@ app.post("/webhook", async (req, res) => {
               //mensaje = "❌ Error registrando datos de pago";
               //mensajeTexto(mensaje,message, business_phone_number_id);
 
-              mensajeFormulario("\u200B", "“❗️Hemos detectado un error en la información ingresada en Datos para pago, por favor, revisá y corrige los datos, dando clic en el botón DATOS PARA PAGO.", 
-                  "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
+              mensajeFormulario("\u200B", "❗️Hemos detectado un error en la información ingresada en datos para pago, por favor, revisá y corrige los datos",
+                  "Da clic en el botón “DATOS PARA PAGO”  para reintetar", "DATOS PARA PAGO", FLOW_DATOS_PAGO_MNK);
           });      
       } else if(respuesta.Formulario === "3"){
 
