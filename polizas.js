@@ -2150,8 +2150,8 @@ app.post("/webhook", async (req, res) => {
           const pago = {
             "codigoBanco": respuesta.Banco,
             "idTipoCuenta": respuesta.TipoCuenta,
-            "numeroCuenta": "CR"+respuesta.NumeroCuenta,
-            "numeroCuentaCliente": respuesta.NumeroCuentaCliente
+            "numeroCuentaIban": "CR"+respuesta.NumeroCuentaIban,
+            "numeroCuenta": respuesta.NumeroCuentaCliente
           };
 
           const indicadores = {
