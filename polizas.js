@@ -2147,11 +2147,12 @@ app.post("/webhook", async (req, res) => {
             "codigo": hashFecha + contac.wa_id,
           };
 
+
           const pago = {
             "codigoBanco": respuesta.Banco,
             "idTipoCuenta": respuesta.TipoCuenta,
             "numeroCuentaIban": "CR"+respuesta.NumeroCuentaIban,
-            "numeroCuenta": respuesta.NumeroCuentaCliente
+            "numeroCuenta": respuesta.NumeroCuentaCliente ?? ""
           };
 
           const indicadores = {
